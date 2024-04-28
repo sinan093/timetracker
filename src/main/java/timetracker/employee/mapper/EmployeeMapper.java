@@ -15,9 +15,9 @@ public interface EmployeeMapper {
     @Mapping(target = "id", ignore = true)
     EmployeeEntity mapToEmployeeEntity(EmployeeDto employeeDto);
 
-    List<EmployeeDto> mapEmployeeDtoList(List<EmployeeEntity> employeeEntities);
+    List<EmployeeDto> mapToEmployeeDtoList(List<EmployeeEntity> employeeEntities);
 
     @Mapping(target = "id", ignore = true)
-    List<EmployeeEntity> mapEmployeeEntityList(List<EmployeeDto> employeeDtos);
+    List<EmployeeEntity> mapToEmployeeEntityList(List<EmployeeDto> employeeDtos);
 
 }
