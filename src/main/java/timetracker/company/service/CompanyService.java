@@ -17,19 +17,19 @@ public class CompanyService {
     private final CompanyMapper companyMapper;
 
     public void saveCompany(CompanyDto companyDto) {
-        CompanyEntity companyEntity = companyMapper.mapCompanyDtoToEntity(companyDto);
+        CompanyEntity companyEntity = companyMapper.mapToCompanyEntity(companyDto);
         companyRepository.save(companyEntity);
     }
 
     public List<CompanyDto> getAllCompanies() {
         List<CompanyEntity> companyEntityList = companyRepository.findAll();
-        return companyMapper.mapCompanyEntityListToDtoList(companyEntityList);
+        return companyMapper.mapToCompanyDtos(companyEntityList);
     }
 
     public void updateCompany(CompanyDto companyDto) {
         CompanyEntity companyEntity = companyRepository.findById(companyDto.getId())
                 .orElseThrow();
-        companyEntity = companyMapper.mapCompanyDtoToEntity(companyDto);
+        companyEntity = companyMapper.mapToCompanyEntity(companyDto);
         companyRepository.save(companyEntity);
     }
 
