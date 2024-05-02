@@ -6,7 +6,6 @@ import timetracker.customer.dto.CustomerDto;
 import timetracker.customer.repository.CustomerRepository;
 import timetracker.customer.service.CustomerService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController("/customer")
