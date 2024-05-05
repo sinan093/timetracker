@@ -13,6 +13,7 @@ public interface EmployeeMapper {
     EmployeeDto mapToEmployeeDto(EmployeeEntity employeeEntity);
 
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "addressEntity", ignore = true)
     EmployeeEntity mapToEmployeeEntity(EmployeeDto employeeDto);
 
     List<EmployeeDto> mapToEmployeeDtoList(List<EmployeeEntity> employeeEntities);

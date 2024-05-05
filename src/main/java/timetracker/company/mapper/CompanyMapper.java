@@ -1,6 +1,7 @@
 package timetracker.company.mapper;
 
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import timetracker.company.dto.CompanyDto;
 import timetracker.company.entity.CompanyEntity;
 
@@ -11,6 +12,7 @@ public interface CompanyMapper {
 
     CompanyDto mapToCompanyDto(CompanyEntity companyEntity);
 
+    @Mapping(target = "addressEntity", ignore = true)
     CompanyEntity mapToCompanyEntity(CompanyDto companyDto);
 
     List<CompanyDto> mapToCompanyDtos(List<CompanyEntity> companyEntities);

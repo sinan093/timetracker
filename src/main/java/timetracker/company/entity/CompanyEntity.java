@@ -1,12 +1,10 @@
 package timetracker.company.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import timetracker.address.entity.AddressEntity;
 
 @Data
 @Builder
@@ -30,6 +28,10 @@ public class CompanyEntity {
 
     @Column(name = "address")
     private String address;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id")
+    private AddressEntity addressEntity;
 
     public CompanyEntity() {}
 }

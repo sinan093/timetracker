@@ -13,6 +13,7 @@ public interface CustomerMapper {
     CustomerDto mapToCustomerDto(CustomerEntity customerEntity);
 
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "addressEntity", ignore = true)
     CustomerEntity mapToCustomerEntity(CustomerDto customerDto);
 
     List<CustomerDto> mapToCustomerDtos(List<CustomerEntity> customerEntities);
