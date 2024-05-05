@@ -7,7 +7,7 @@ import timetracker.address.entity.AddressEntity;
 
 import java.util.List;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface AddressMapper {
 
     AddressDto mapToAddressDto(AddressEntity addressEntity);

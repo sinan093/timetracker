@@ -14,7 +14,7 @@ public class AddressEntity {
     @Id
     private Long id;
 
-    @Column(name = "city")
+    @Column(name = "country")
     private String country;
 
     @Column(name = "zip_code")

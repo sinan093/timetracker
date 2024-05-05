@@ -11,3 +11,5 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     generate-ddl: false
+  liquibase:
+    enabled: false

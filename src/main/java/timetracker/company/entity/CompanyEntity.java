@@ -36,6 +36,6 @@ public class CompanyEntity {
     @JoinColumn(name = "address_id")
     private AddressEntity addressEntity;
 
-    @OneToMany(mappedBy = "company")
+    @OneToMany(mappedBy = "companyEntity")
     private List<ProjectEntity> projectEntities;
 }

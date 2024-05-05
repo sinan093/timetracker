@@ -7,7 +7,7 @@ import timetracker.user.entity.UserEntity;
 
 import java.util.List;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface UserMapper {
 
 

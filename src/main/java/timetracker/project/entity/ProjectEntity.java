@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import timetracker.company.entity.CompanyEntity;
 
 @Data
 @Builder
@@ -24,4 +25,8 @@ public class ProjectEntity {
 
     @Column(name = "budget")
     private String budget;
+
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private CompanyEntity companyEntity;
 }

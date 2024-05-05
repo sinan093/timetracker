@@ -7,7 +7,7 @@ import timetracker.company.entity.CompanyEntity;
 
 import java.util.List;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface CompanyMapper {
 
     CompanyDto mapToCompanyDto(CompanyEntity companyEntity);

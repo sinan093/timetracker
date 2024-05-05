@@ -7,12 +7,13 @@ import timetracker.project.entity.ProjectEntity;
 
 import java.util.List;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface ProjectMapper {
 
     ProjectDto mapToProjectDto(ProjectEntity projectEntity);
 
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "companyEntity", ignore = true)
     ProjectEntity mapToProjectEntity(ProjectDto projectDto);
 
     List<ProjectDto> mapToProjectDtos(List<ProjectEntity> projectEntities);
