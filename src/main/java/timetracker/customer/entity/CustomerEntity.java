@@ -3,6 +3,7 @@ package timetracker.customer.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import timetracker.address.entity.AddressEntity;
+import timetracker.project.entity.ProjectEntity;
 
 @Entity
 @Table(schema = "customer_data", name = "customer")
@@ -24,4 +25,8 @@ public class CustomerEntity {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private AddressEntity addressEntity;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "project_id")
+    private ProjectEntity projectEntity;
 }

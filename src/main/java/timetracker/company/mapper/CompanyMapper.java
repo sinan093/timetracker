@@ -13,6 +13,7 @@ public interface CompanyMapper {
     CompanyDto mapToCompanyDto(CompanyEntity companyEntity);
 
     @Mapping(target = "addressEntity", ignore = true)
+    @Mapping(target = "projectEntities", ignore = true)
     CompanyEntity mapToCompanyEntity(CompanyDto companyDto);
 
     List<CompanyDto> mapToCompanyDtos(List<CompanyEntity> companyEntities);

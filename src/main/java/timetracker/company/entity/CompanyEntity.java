@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import timetracker.address.entity.AddressEntity;
+import timetracker.project.entity.ProjectEntity;
+
+import java.util.List;
 
 @Data
 @Builder
@@ -33,5 +36,6 @@ public class CompanyEntity {
     @JoinColumn(name = "address_id")
     private AddressEntity addressEntity;
 
-    public CompanyEntity() {}
+    @OneToMany(mappedBy = "company")
+    private List<ProjectEntity> projectEntities;
 }
