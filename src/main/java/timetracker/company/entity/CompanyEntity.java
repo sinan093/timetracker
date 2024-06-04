@@ -29,9 +29,6 @@ public class CompanyEntity {
     @Column(name = "city")
     private String city;
 
-    @Column(name = "address")
-    private String address;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private AddressEntity addressEntity;

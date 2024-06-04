@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import timetracker.address.entity.AddressEntity;
+import timetracker.project.entity.ProjectEntity;
+
+import java.util.List;
 
 @Data
 @Builder
@@ -17,11 +20,11 @@ public class EmployeeEntity {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "last_name")
-    private String lastname;
-
     @Column(name = "first_name")
-    private String firstname;
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
 
     @Column(name = "birthday")
     private String birthday;
@@ -32,5 +35,11 @@ public class EmployeeEntity {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private AddressEntity addressEntity;
+
+    @ManyToMany
+    @JoinTable(name = "employee_project_map",
+            joinColumns = @JoinColumn(name = "project_id"),
+            inverseJoinColumns = @JoinColumn(name = "project_id"))
+    private List <ProjectEntity> projectEntities;
 
 }

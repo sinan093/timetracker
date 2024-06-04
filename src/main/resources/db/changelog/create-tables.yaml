@@ -4,8 +4,6 @@ databaseChangeLog:
       author: sinan.kirbas
       labels: create-schema-and-tables
       changes:
-        - createSchema:
-
         - createTable:
             schemaName: user_data
             tableName: user
@@ -32,3 +30,95 @@ databaseChangeLog:
               - column:
                   name: password
                   type: varchar(256)
+        - createTable:
+            schemaName: project_data
+            tableName: project
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: project_name
+                  type: varchar(256)
+              - column:
+                  name: capacity_in_hours
+                  type: varchar(256)
+              - column:
+                  name: budget
+                  type: varchar(256)
+              - column:
+                  name: company_id
+                  type: bigint
+        - createTable:
+            schemaName: user_data
+            tableName: employee
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(256)
+              - column:
+                  name: last_name
+                  type: varchar(256)
+              - column:
+                  name: birthday
+                  type: varchar(256)
+              - column:
+                  name: hourly_payment
+                  type: varchar(256)
+              - column:
+                  name: address_id
+                  type: bigint
+              - column:
+                  name: employee_project_map_id
+                  type: bigint
+        - createTable:
+            schemaName: shared
+            tableName: employee_project_map
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: employee_id
+                  type: bigint
+              - column:
+                  name: project_id
+                  type: bigint
+        - createTable:
+            schemaName: user_data
+            tableName: company
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(256)
+              - column:
+                  name: zipcode
+                  type: varchar(256)
+              - column:
+                  name: city
+                  type: varchar(256)
+              - column:
+                  name: address_id
+                  type: bigint

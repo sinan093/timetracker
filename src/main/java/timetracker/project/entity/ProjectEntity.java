@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import timetracker.company.entity.CompanyEntity;
+import timetracker.employee.entity.EmployeeEntity;
+
+import java.util.List;
 
 @Data
 @Builder
@@ -29,4 +32,7 @@ public class ProjectEntity {
     @ManyToOne
     @JoinColumn(name = "company_id")
     private CompanyEntity companyEntity;
+
+    @ManyToMany(mappedBy = "projectEntities")
+    private List <EmployeeEntity> employeeEntities;
 }
