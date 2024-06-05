@@ -4,6 +4,10 @@ package timetracker.company.dto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import timetracker.address.dto.AddressDto;
+import timetracker.project.dto.ProjectDto;
+
+import java.util.List;
 
 @Data
 @Builder
@@ -14,12 +18,8 @@ public class CompanyDto {
 
     private String name;
 
-    private String zipcode;
+    private AddressDto addressDto;
 
-    private String city;
-
-    private String address;
-
-    public CompanyDto() {}
+    private List<ProjectDto> projectDtos;
 
 }

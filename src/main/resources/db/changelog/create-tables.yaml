@@ -114,11 +114,5 @@ databaseChangeLog:
                   name: name
                   type: varchar(256)
               - column:
-                  name: zipcode
-                  type: varchar(256)
-              - column:
-                  name: city
-                  type: varchar(256)
-              - column:
                   name: address_id
                   type: bigint

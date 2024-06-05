@@ -23,12 +23,6 @@ public class CompanyEntity {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "zipcode")
-    private String zipcode;
-
-    @Column(name = "city")
-    private String city;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private AddressEntity addressEntity;

@@ -39,7 +39,7 @@ public class EmployeeEntity {
     @ManyToMany
     @JoinTable(name = "employee_project_map",
             joinColumns = @JoinColumn(name = "project_id"),
-            inverseJoinColumns = @JoinColumn(name = "project_id"))
+            inverseJoinColumns = @JoinColumn(name = "employee_id"))
     private List <ProjectEntity> projectEntities;
 
 }
