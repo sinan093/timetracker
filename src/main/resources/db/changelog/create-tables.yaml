@@ -53,6 +53,9 @@ databaseChangeLog:
               - column:
                   name: company_id
                   type: bigint
+              - column:
+                  name: employee_project_map_id
+                  type: bigint
         - createTable:
             schemaName: user_data
             tableName: employee
