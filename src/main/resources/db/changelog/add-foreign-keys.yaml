@@ -36,6 +36,22 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: address
             referencedTableSchemaName: shared
+        - addForeignKeyConstraint:
+            baseColumnNames: employee_project_map_id
+            baseTableName: employee
+            baseTableSchemaName: user_data
+            constraintName: fk_employee_project_map_employee
+            referencedColumnNames: id
+            referencedTableName: employee_project_map
+            referencedTableSchemaName: shared
+        - addForeignKeyConstraint:
+            baseColumnNames: employee_project_map_id
+            baseTableName: project
+            baseTableSchemaName: project_data
+            constraintName: fk_employee_project_map_project
+            referencedColumnNames: id
+            referencedTableName: employee_project_map
+            referencedTableSchemaName: shared
 
 
 
