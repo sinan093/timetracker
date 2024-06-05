@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: sinan.kirbas
+      labels: add-foreign-keys
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: project_id
+            baseTableName: company
+            baseTableSchemaName: user_data
+            constraintName: fk_company_project
+            referencedColumnNames: id
+            referencedTableName: project
+            referencedTableSchemaName: project_data
+        -  addForeignKeyConstraint:
+            baseColumnNames:  address_id
+            baseTableName:  company
+            baseTableSchemaName:  user_data
+            constraintName:  fk_company_address
+            referencedColumnNames:  id
+            referencedTableName:  address
+            referencedTableSchemaName:  shared
+        - addForeignKeyConstraint:
+            baseColumnNames: company_id
+            baseTableName: project
+            baseTableSchemaName: project_data
+            constraintName: fk_project_company
+            referencedColumnNames: id
+            referencedTableName: company
+            referencedTableSchemaName: user_data
+        - addForeignKeyConstraint:
+            baseColumnNames: address_id
+            baseTableName: employee
+            baseTableSchemaName: user_data
+            constraintName: fk_employee_address
+            referencedColumnNames: id
+            referencedTableName: address
+            referencedTableSchemaName: shared
+
+
+
