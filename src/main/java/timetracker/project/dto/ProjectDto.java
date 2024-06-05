@@ -3,6 +3,7 @@ package timetracker.project.dto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import timetracker.employee.dto.EmployeeDto;
 import timetracker.employee.entity.EmployeeEntity;
 
 import java.util.List;
@@ -20,5 +21,5 @@ public class ProjectDto {
 
     private ProjectDto projectDto;
 
-    private List<EmployeeEntity> employeeEntityList;
+    private List<EmployeeDto> employeeDtos;
 }

@@ -7,7 +7,7 @@ import timetracker.project.service.ProjectService;
 
 import java.util.List;
 
-@RestController
+@RestController("/project")
 @RequiredArgsConstructor
 public class ProjectController {
 

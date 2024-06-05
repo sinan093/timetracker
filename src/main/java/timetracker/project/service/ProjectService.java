@@ -31,4 +31,9 @@ public class ProjectService {
         projectRepository.deleteById(id);
     }
 
+    public ProjectDto getByProjectName(String name) {
+        ProjectEntity projectEntity = projectRepository.findByName(name);
+        return projectMapper.mapToProjectDto(projectEntity);
+    }
+
 }

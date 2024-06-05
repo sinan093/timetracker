@@ -7,4 +7,6 @@ import timetracker.project.entity.ProjectEntity;
 @Repository
 public interface ProjectRepository extends JpaRepository<ProjectEntity, Long> {
 
+    ProjectEntity findByName(String name);
+
 }
