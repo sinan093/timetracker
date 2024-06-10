@@ -24,10 +24,13 @@ public class ProjectEntity {
     private String projectName;
 
     @Column(name = "capacity_in_hours")
-    private String capacityInHours;
+    private Integer capacityInHours;
 
     @Column(name = "budget")
     private String budget;
+
+    @Column(name = "spent_hours")
+    private Integer spentHours;
 
     @ManyToOne
     @JoinColumn(name = "company_id")

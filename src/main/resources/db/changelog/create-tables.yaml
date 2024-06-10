@@ -46,7 +46,7 @@ databaseChangeLog:
                   type: varchar(256)
               - column:
                   name: capacity_in_hours
-                  type: varchar(256)
+                  type: int
               - column:
                   name: budget
                   type: varchar(256)
@@ -56,6 +56,9 @@ databaseChangeLog:
               - column:
                   name: employee_project_map_id
                   type: bigint
+              - column:
+                  name: spent_hours
+                  type: int
         - createTable:
             schemaName: user_data
             tableName: employee

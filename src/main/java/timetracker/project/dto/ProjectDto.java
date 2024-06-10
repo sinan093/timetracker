@@ -15,11 +15,13 @@ public class ProjectDto {
 
     private String projectName;
 
-    private String capacityInHours;
+    private Integer capacityInHours;
 
     private String budget;
 
     private ProjectDto projectDto;
 
     private List<EmployeeDto> employeeDtos;
+
+    private Integer spentHours;
 }
