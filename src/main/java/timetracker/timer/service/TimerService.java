@@ -6,6 +6,7 @@ import timetracker.company.service.CompanyService;
 import timetracker.employee.service.EmployeeService;
 import timetracker.project.dto.ProjectDto;
 import timetracker.project.service.ProjectService;
+import timetracker.timer.dto.ProjectTimeSpentDto;
 
 import java.math.BigDecimal;
 
@@ -31,8 +32,8 @@ public class TimerService {
         return projectDto.getCapacityInHours() - projectDto.getSpentHours();
     }
 
-    public void bookSpentTimeToProject(String projectName, Integer spentTime) {
-        projectService.bookToProject(projectName, spentTime);
+    public void bookSpentTimeToProject(ProjectTimeSpentDto projectTimeSpentDto) {
+        projectService.bookToProject(projectTimeSpentDto.getProjectName(), projectTimeSpentDto.getSpentTimeInHours());
     }
 
 }
