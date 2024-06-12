@@ -2,7 +2,6 @@ package timetracker.project.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import timetracker.employee.dto.EmployeeDto;
 import timetracker.employee.entity.EmployeeEntity;
 import timetracker.project.dto.ProjectDto;
 import timetracker.project.entity.ProjectEntity;
@@ -35,13 +34,13 @@ public class ProjectService {
         projectRepository.deleteById(id);
     }
 
-    public ProjectDto getByProjectName(String name) {
-        ProjectEntity projectEntity = projectRepository.findByName(name);
+    public ProjectDto getByProjectName(String projectName) {
+        ProjectEntity projectEntity = projectRepository.findByProjectName(projectName);
         return projectMapper.mapToProjectDto(projectEntity);
     }
 
     public void bookToProject(String projectName, Integer spentHours) {
-        ProjectEntity projectEntity = projectRepository.findByName(projectName);
+        ProjectEntity projectEntity = projectRepository.findByProjectName(projectName);
         if(spentHours > 0) {
             Integer spentHoursSum = projectEntity.getSpentHours() + spentHours;
             projectEntity.setSpentHours(spentHoursSum);
@@ -52,7 +51,7 @@ public class ProjectService {
     }
 
     public BigDecimal getAvgHourlyCostForProject(String projectName) {
-        ProjectEntity projectEntity = projectRepository.findByName(projectName);
+        ProjectEntity projectEntity = projectRepository.findByProjectName(projectName);
         BigDecimal avgHourlyCost = new BigDecimal("0");
         List<EmployeeEntity> employeeEntities = projectEntity.getEmployeeEntities();
         for (EmployeeEntity employeeEntity : employeeEntities) {
