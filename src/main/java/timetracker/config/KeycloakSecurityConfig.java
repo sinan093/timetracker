@@ -51,8 +51,17 @@ public class KeycloakSecurityConfig {
         //TODO think about relevant roles for rest api calls
         // with .hasRole on the requestMatchers
         httpSecurity.authorizeHttpRequests(auth -> auth.requestMatchers(
-                new AntPathRequestMatcher("/*"))
-                .permitAll().anyRequest().authenticated());
+                new AntPathRequestMatcher("/company"))
+                .authenticated());
+        httpSecurity
+                .authorizeHttpRequests((requests) -> requests
+                        .requestMatchers( new AntPathRequestMatcher("swagger-ui/**")).permitAll()
+                        .requestMatchers( new AntPathRequestMatcher("/swagger-ui/**")).permitAll()
+                        .requestMatchers( new AntPathRequestMatcher("v3/api-docs/**")).permitAll()
+                        .requestMatchers( new AntPathRequestMatcher("/v3/api-docs/**")).permitAll()
+                        .anyRequest().authenticated())
+                .httpBasic(Customizer.withDefaults());
+
         httpSecurity.oauth2ResourceServer((oauth2) -> oauth2.jwt(Customizer.withDefaults()));
         return httpSecurity.build();
     }
